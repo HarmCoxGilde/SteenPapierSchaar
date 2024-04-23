@@ -6,7 +6,9 @@ function speel(spelerKeuze) {
     const keuzes = ['steen', 'papier', 'schaar'];
     const computerKeuze = keuzes[Math.floor(Math.random() * 3)];
     const resultaat = bepaalWinnaar(spelerKeuze, computerKeuze);
-    document.getElementById('resultaat').innerHTML = `Jij koos: ${spelerKeuze}<br>Computer koos: ${computerKeuze}<br>${resultaat}`;
+    const resultaatDiv = document.getElementById('resultaat');
+    resultaatDiv.innerHTML = `Jij koos: ${spelerKeuze}<br>Computer koos: ${computerKeuze}<br>${resultaat}`;
+    updateBackgroundColor(resultaat);
 }
 
 function bepaalWinnaar(speler, computer) {
@@ -18,5 +20,17 @@ function bepaalWinnaar(speler, computer) {
         return 'Jij wint!';
     } else {
         return 'Computer wint!';
+    }
+}
+
+function updateBackgroundColor(resultaat) {
+    const resultaatDiv = document.getElementById('resultaat');
+    resultaatDiv.className = '';
+    if (resultaat.includes('Jij wint!')) {
+        resultaatDiv.classList.add('win');
+    } else if (resultaat.includes('Computer wint!')) {
+        resultaatDiv.classList.add('lose');
+    } else {
+        resultaatDiv.classList.add('draw');
     }
 }
