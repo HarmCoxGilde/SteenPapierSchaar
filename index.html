@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Steen, Papier, Schaar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="muteButton">Mute Sound</button>
+
     <h1>Steen, Papier, Schaar</h1>
-    <button id="steen">Steen</button>
-    <button id="papier">Papier</button>
-    <button id="schaar">Schaar</button>
+
+    <div id="gameArea">
+        <div class="buttonWrapper">
+            <img src="rock.png" id="steen" class="keuze">
+        </div>
+        <div class="buttonWrapper">
+            <img src="paper.png" id="papier" class="keuze">
+        </div>
+        <div class="buttonWrapper">
+            <img src="scissors.png" id="schaar" class="keuze">
+        </div>
+    </div>
+
+    <div id="playerScore"></div>
+    <div id="computerScore"></div>
+    <div id="highScore"></div>
+    <div id="currentStreak"></div>
+    <div id="rounds"></div>
     <div id="resultaat"></div>
+
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="winSound" src="win.mp3"></audio>
+    
     <script src="spel.js"></script>
 </body>
 </html>

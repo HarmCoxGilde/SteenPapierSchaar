@@ -1,0 +1,96 @@
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#gameArea {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttonWrapper {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.buttonWrapper:hover {
+    transform: scale(1.1);
+}
+
+#resultaat {
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+#muteButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+button:hover {
+    background-color: #e1e1e1;
+}
+
+.win {
+    background-color: rgb(0, 255, 0);
+}
+
+.lose {
+    background-color: rgb(255, 0, 0);
+}
+
+.draw {
+    background-color: rgb(128, 128, 128);
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.keuze {
+    cursor: pointer;
+    width: 100px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.keuze:hover {
+    transform: scale(1.1);
+    animation: shake 0.5s;
+}
+
+#resultaat, #playerScore, #computerScore, #highScore, #currentStreak, #rounds {
+    text-align: center;
+    margin-top: 20px;
+}
